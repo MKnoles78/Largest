@@ -15,8 +15,9 @@ public class Largest {
 
 		// prompt user for 10 integer values
 		System.out.println("Please enter 10 integers: ");
-		for (counter = 0; counter < 10; counter++) {
+		for (counter = 1; counter <= 10; counter++) {
 			number = input.nextInt();
+			// assume first input is the largest input on first count
 			if (counter == 1) {
 				largest = number;
 			}
