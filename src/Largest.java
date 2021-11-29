@@ -8,17 +8,23 @@ public class Largest {
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
 
-		// create an array to store 10 integers
-		int numbers[] = new int[10];
+		// initialize variables to 0
+		int counter = 0; // stores count
 		int number = 0; // integer most recently input by user
 		int largest = 0; // largest number found so far
 
 		// prompt user for 10 integer values
 		System.out.println("Please enter 10 integers: ");
-		for (number = 0; number < numbers.length; number++) {
-			numbers[number] = input.nextInt();
+		for (counter = 0; counter < 10; counter++) {
+			number = input.nextInt();
+			if (counter == 1) {
+				largest = number;
+			}
+			// compares number on subsequent iterations against smallest
+			else if (number > largest) {
+				largest = number; // replaces largest if new number is largest
+			}
 		}
-
+		System.out.printf("Largest Integer is: %d%n", largest);
 	}
-
 }
